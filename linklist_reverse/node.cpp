@@ -121,7 +121,7 @@ ListNode* reverseBetween(ListNode* head, int left, int right)
         *          |
         *         pMid
         *
-        * after:   4 -> 3 -> 2 -> 1 -> pRight
+        * after:   4 -> 3 -> 2 -> 1 -> pRight(by default, nullptr)
         *          ^              ^
         *          |              |
         *         pPre           pMid

@@ -1,15 +1,3 @@
-/*
-*   given a string and an array of cost
-*   example:
-*   string a = "aabb"
-*   vector<int> c = {1,3,2,4}
-*   make each letter just once appeared
-*   a = "aabb" -> "ab"
-*   min_cost = 1 + 2 = 3
-*   specially, if a = "aaaaa"
-*   erase every 'a'
-*/
-
 #include<iostream>
 #include<string>
 #include<vector>

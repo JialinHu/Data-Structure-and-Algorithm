@@ -3,7 +3,7 @@
 
 bool has_cycle_using_slow_fast_ptr(ListNode *head)
 {
-    if(!head)
+    if (!head)
     {
         return false;
     }
@@ -11,12 +11,12 @@ bool has_cycle_using_slow_fast_ptr(ListNode *head)
     ListNode* pSlow = head;
     ListNode* pFast = head;
 
-    while(pFast)
+    while (pFast)
     {
         pSlow = pSlow->next;
         pFast = pFast->next?(pFast->next->next):(nullptr);
 
-        if(pFast && pFast == pSlow)
+        if (pFast && pFast == pSlow)
         {
             return true;
         }
@@ -31,11 +31,32 @@ bool has_cycle_using_map(ListNode *head)
 
     while(head)
     {
-        if(savedNode.find(head) != savedNode.end())
+        if (savedNode.end() != savedNode.find(head))
         {
             return true;
         }
+        savedNode.insert(std::make_pair(head, head->val));
         head = head->next;
+    }
+
+    return false;
+}
+
+bool has_cycle_by_redirect_next_to_self(ListNode* head)
+{
+    ListNode* pPre = head;
+    ListNode* pCur = pPre;
+
+    while (pCur)
+    {
+        if (pCur == pCur->next)
+        {
+            return true;
+        }
+        pPre = pCur;
+        pCur = pCur->next;
+
+        pPre->next = pPre;
     }
 
     return false;

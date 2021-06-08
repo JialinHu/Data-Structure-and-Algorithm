@@ -1,5 +1,3 @@
-
-
 struct ListNode
 {
 	int val;
@@ -9,20 +7,4 @@ struct ListNode
 	ListNode(int x) : val(x), next(nullptr) {}
 	ListNode(int x, ListNode *next) : val(x), next(next) {}
 
-    void display();
 };
-
-void ListNode::display()
-{
-    ListNode* pTmp = this;
-
-    std::cout << "ListNode:" << std::endl;
-
-    while (pTmp)
-    {
-        std::cout << pTmp->val << "->";
-        pTmp = pTmp->next;
-    }
-
-    std::cout << "nullptr" << std::endl;
-}

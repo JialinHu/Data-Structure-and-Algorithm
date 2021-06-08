@@ -1,20 +1,5 @@
 #include "solution.h"
 
-void ListNode::display()
-{
-    ListNode* pTmp = this;
-
-    std::cout << "ListNode:" << std::endl;
-
-    while (pTmp)
-    {
-        std::cout << pTmp->val << "->";
-        pTmp = pTmp->next;
-    }
-
-    std::cout << "nullptr" << std::endl;
-}
-
 ListNode* constructList(int size, int* numbers)
 {
     ListNode* pRoot = nullptr;

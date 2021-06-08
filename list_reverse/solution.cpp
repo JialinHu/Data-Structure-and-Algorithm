@@ -42,9 +42,6 @@ ListNode* reverseList(ListNode* head, ListNode* right)
         pCur = pNext;
     }
 
-    //std::cout << "Event: reverse completed, use list->display() to see the result:" << std::endl;
-    //pPre->display();
-
     return pPre;
 }
 
@@ -100,6 +97,7 @@ ListNode* reverseBetween(ListNode* head, int left, int right)
         {
             pMid = pRoot;
         }
+
         /*
         * origin:  1 -> 2 -> 3 -> 4-> nullptr
         *          ^
@@ -111,6 +109,7 @@ ListNode* reverseBetween(ListNode* head, int left, int right)
         *          |              |
         *         pPre           pMid
         */
+       
         ListNode* pPre = reverseList(pMid, pRight);
 
         if (pLeft)
@@ -121,8 +120,7 @@ ListNode* reverseBetween(ListNode* head, int left, int right)
         {
             pRoot = pPre;
         }
-        //std::cout << "Event: add other node completed, use list->display() to see the result:" << std::endl;
-        //pRoot->display();
+
         return pRoot;
     }
     else if (right == left)
